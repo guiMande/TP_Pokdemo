@@ -8,6 +8,8 @@ import {PokemonClass} from '../pokemon/pokemon-class';
 @Component({
   selector: 'app-search-component',
   template: `
+    <input [(ngModel)]="id" placeholder="Id du pokemon"/>
+    <input readonly value="{{id}}" /><br>
     <input [(ngModel)]="searchText" placeholder="Nom du pokemon"/>
     <button (click)="filter(searchText)"> Go ! </button>
     <ul>
@@ -20,12 +22,11 @@ import {PokemonClass} from '../pokemon/pokemon-class';
 })
 export class SearchComponentComponent implements OnInit {
   id: string;
-  name: string;
   searchText: string;
   pokemon: PokemonClass;
   filterPokemon = new FilterPokemonPipe();
   tab: TableauPok;
-  constructor(private pokeService: PokéAPIService) { }
+  constructor(private pokeService: PokéAPIService) {}
   ngOnInit() {
     this.pokeService.getPokemons().subscribe(res => {
       this.tab = res;

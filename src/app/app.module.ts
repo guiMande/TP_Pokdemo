@@ -7,7 +7,7 @@ import { SearchComponentComponent } from './search-component/search-component.co
 import { FilterPokemonPipe } from './pokemon/filter-pokemon.pipe';
 import {HttpClientModule} from '@angular/common/http';
 import {PokéAPIService} from './pokemon/pokéapi.service';
-import { InfoPokemonComponent } from './info-pokemon/info-pokemon.component';
+import { InfoPokemonComponent } from './info-pokemon-component/info-pokemon.component';
 
 @NgModule({
   declarations: [
