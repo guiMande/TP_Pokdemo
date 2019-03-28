@@ -3,6 +3,7 @@ export class PokemonClass {
   name: string;
   weight: number;
   height: number;
+  sprites: object[];
 }
 
 
