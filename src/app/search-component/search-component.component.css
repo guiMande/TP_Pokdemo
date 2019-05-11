@@ -1,0 +1,8 @@
+.selectPokemonLeft{
+  float: left;
+}
+
+.selectPokemonRight{
+  float: right;
+  margin-rigt: 10%;
+}

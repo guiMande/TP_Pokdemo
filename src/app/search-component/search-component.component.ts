@@ -8,20 +8,22 @@ import {PokemonClass} from '../pokemon/pokemon-class';
 @Component({
   selector: 'app-search-component',
   template: `
-    <div>
-    <input [(ngModel)]="id" placeholder="Id du pokemon"/>
-    <input readonly value="{{id}}" /><br>
-    <input [(ngModel)]="searchText" placeholder="Nom du pokemon"/>
-    <button (click)="filter(searchText)"> Go ! </button><br>       <h3> Pokedex :</h3>
-    <ul>
-      <li  *ngFor="let poke of tab.results">
-        {{poke.name}} <button id="btn_{{poke.name}}" (click)="getAttributes(poke)"> Info </button>
-      </li>
-    </ul>
+    <div class="selectPokemonLeft">
+      <input [(ngModel)]="id" placeholder="Id du pokemon"/>
+     <input readonly value="{{id}}" /><br>
+      <input [(ngModel)]="searchText" placeholder="Nom du pokemon"/>
+      <button (click)="filter(searchText)"> Go ! </button><br>       
+      <h3> Pokedex :</h3>
+      <ul>
+        <li  *ngFor="let poke of tab.results">
+         {{poke.name}} <button id="btn_{{poke.name}}" (click)="getAttributes(poke)"> Info </button>
+        </li>
+      </ul>
     </div>
-    <div>
+    <div class="selectPokemonRight">
       <app-info-pokemon [pokemon]="pokemon"></app-info-pokemon>
     </div>
+    
   `
 })
 export class SearchComponentComponent implements OnInit {
